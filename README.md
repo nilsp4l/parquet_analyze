@@ -31,6 +31,14 @@ In this step the contents of the data directory are copied to the server subdire
 This potentially makes it easier to address them later on. If you don't wish for that to happen
 you can turn off the CMake option COPY_DATA.
 
+## Docker
+You can also simply use docker
+```
+docker compose up --build
+# maybe also start the server (it should start automatically)
+# docker compose up -d server
+docker compose run client --host server --info
+```
 
 ## Running the Server
 The binary for the server lies in the server subdirectory of your build directory.

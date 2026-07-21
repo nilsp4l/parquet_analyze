@@ -1,0 +1,14 @@
+services:
+  server:
+    build:
+      context: .
+      target: server
+    ports:
+      - "42420:42420"
+
+  client:
+    build:
+      context: .
+      target: client
+    depends_on:
+      - server

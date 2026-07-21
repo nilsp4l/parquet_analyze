@@ -115,8 +115,7 @@ namespace parquet_analyze_server {
 
         arrow::flight::Location location;
 
-        // keep this at localhost for now for the sake of simplicity assuming we are on the same machine
-        ARROW_ASSIGN_OR_RAISE(location, arrow::flight::Location::ForGrpcTcp("localhost", port()));
+        ARROW_ASSIGN_OR_RAISE(location, arrow::flight::Location::ForGrpcTcp("0.0.0.0", port()));
 
         endpoint.locations.push_back(location);
 
