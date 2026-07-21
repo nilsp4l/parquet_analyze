@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+
+
+// This is very simple, as it is not really necessary to have a complex query language for the current state
+// due to its nature this ofc is easily expandable
+message Query {
+  string dataset_name = 1;
+  string column_name = 2;
+}
+
+

@@ -1,0 +1,1 @@
+target_sources(${EXECUTABLE_NAME} PRIVATE parquet_analyze_flight_client.cpp metadata_service.cpp)

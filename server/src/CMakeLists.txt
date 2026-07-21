@@ -1,0 +1,1 @@
+target_sources(${EXECUTABLE_NAME} PRIVATE parquet_analyze_service_impl.cpp)
