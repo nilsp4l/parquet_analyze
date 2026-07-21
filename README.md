@@ -74,6 +74,6 @@ Obviously you need to have a running server on the given host and port for the c
 #### Summarize
 
 ```
-./parquet_analyze_cli --data "data.parquet" --host "localhost" --port 42420 --summarize "x_0"
+./parquet_analyze_cli --data "data.parquet" --host "localhost" --port 42420 --summarize "column_0"
 ```
 
