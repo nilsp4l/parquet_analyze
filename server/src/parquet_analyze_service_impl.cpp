@@ -51,13 +51,11 @@ namespace parquet_analyze_server {
         spdlog::info(
             std::format("Received summary query on column {} in {}", query.column_name(), query.dataset_name()));
 
-        arrow::fs::FileSelector selector;
-
         auto format = std::make_shared<arrow::dataset::ParquetFileFormat>();
 
         // we do all this scanner stuff for the sole purpose of not wasting resources by loading the table
         // and filter afterward. Filtering before loading seems far more reasonable.
-        ARROW_ASSIGN_OR_RAISE(auto factory, arrow::dataset::FileSystemDatasetFactory::Make(root_, selector, format,
+        ARROW_ASSIGN_OR_RAISE(auto factory, arrow::dataset::FileSystemDatasetFactory::Make(root_ , {query.dataset_name()}, format,
                                   arrow::dataset::FileSystemFactoryOptions()));
 
         ARROW_ASSIGN_OR_RAISE(auto dataset, factory->Finish());
