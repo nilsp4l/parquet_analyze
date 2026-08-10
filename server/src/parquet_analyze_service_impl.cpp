@@ -70,8 +70,6 @@ namespace parquet_analyze_server {
         ARROW_ASSIGN_OR_RAISE(auto scanner, scan_builder->Finish());
 
 
-        std::shared_ptr<arrow::Table> table;
-        ARROW_ASSIGN_OR_RAISE(table, scanner->ToTable());
 
         ARROW_ASSIGN_OR_RAISE(auto reader, scanner->ToRecordBatchReader());
 
